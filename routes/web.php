@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');
 
 Route::get('/hello-world', function () {
     return "Hello World! How are you doing?";
 });
 
 Route::get('/register', function () {
-    return 'This is register page';
+    return view('auth.register');
 })->name('register');
+
+Route::post(
+    '/register',
+    [RegisterController::class, 'register']
+)->name('register.user');
