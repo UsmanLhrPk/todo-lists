@@ -1,7 +1,7 @@
 <nav class="top-0 left-0 z-20 w-full bg-violet-50">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-    <a href="https://flowbite.com/" class="flex items-center">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo">
+    <a href="{{ route('root') }}" class="flex items-center">
+        <img src="{{ Storage::url('/images/common/logo.jpeg') }}" class="h-8 mr-3" alt="ToDo List Logo">
         <span class="self-center text-2xl font-semibold whitespace-nowrap">ToDo Lists</span>
     </a>
     <div class="flex md:order-2">
