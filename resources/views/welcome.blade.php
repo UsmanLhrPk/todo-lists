@@ -16,10 +16,22 @@
 
         <x-common.nav></x-common.nav>
 
+        @auth
         <div class="w-full">
             <div class="grid w-screen h-screen max-w-screen-xl grid-cols-1 mx-auto place-content-center">
                 <div class="text-5xl font-bold text-center text-violet-900">
-                    Welcome to ToDo Lists. Sign Up and get started today. Or Login and pickup where you left!
+                    {{ __('Welcome Back') . ' ' . Auth::user()->name }}. {{ __('Pickup where you left') }}!
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="#" class="px-4 py-2 text-white rounded-md text-xg bg-violet-700">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+        @else
+        <div class="w-full">
+            <div class="grid w-screen h-screen max-w-screen-xl grid-cols-1 mx-auto place-content-center">
+                <div class="text-5xl font-bold text-center text-violet-900">
+                    {{ __('Welcome to ToDo Lists') }}. {{ __('Sign Up and get started today') }}. {{ __('Or Login and pickup where you left') }}!
                 </div>
                 <div class="mt-8 text-center">
                     <a href="{{ route('register') }}" class="px-4 py-2 text-white rounded-md text-xg bg-violet-700">Sign Up</a>
@@ -27,6 +39,7 @@
                 </div>
             </div>
         </div>
+        @endauth
 
     </body>
 </html>

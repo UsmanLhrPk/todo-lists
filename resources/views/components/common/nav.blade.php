@@ -5,7 +5,15 @@
         <span class="self-center text-2xl font-semibold whitespace-nowrap">ToDo Lists</span>
     </a>
     <div class="flex md:order-2">
-        <button type="button" class="px-4 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 md:mr-0 ">Go To Dashboard</button>
+        @auth
+        <form method="POST" action="{{ route('session.destroy') }}">
+            @method('DELETE')
+            @csrf
+
+            <button type="submit" class="px-4 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 md:mr-0 ">Log out</button>
+        </form>
+        @endauth
+
         <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm rounded-lg text-violet-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

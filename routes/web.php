@@ -15,6 +15,10 @@ use App\Http\Controllers\SessionsController;
 |
 */
 
+Route::fallback(function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('welcome');
 })->name('root');
@@ -39,3 +43,7 @@ Route::get('/login', function () {
 Route::post('/session',
     [SessionsController::class, 'store']
 )->name('session.store');
+
+Route::delete('/session',
+    [SessionsController::class, 'destroy']
+)->name('session.destroy');
