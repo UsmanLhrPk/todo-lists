@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,11 @@ Route::post(
     '/register',
     [RegisterController::class, 'register']
 )->name('register.user');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('session.create');
+
+Route::post('/session',
+    [SessionsController::class, 'store']
+)->name('session.store');
