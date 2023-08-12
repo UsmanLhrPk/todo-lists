@@ -23,7 +23,7 @@
                 </div>
                 <div class="mt-8 text-center">
                     <a href="{{ route('register') }}" class="px-4 py-2 text-white rounded-md text-xg bg-violet-700">Sign Up</a>
-                    <a href="#" class="px-4 py-2 text-white rounded-md text-xg bg-violet-700">Login</a>
+                    <a href="{{ route('session.create') }}" class="px-4 py-2 text-white rounded-md text-xg bg-violet-700">Login</a>
                 </div>
             </div>
         </div>
